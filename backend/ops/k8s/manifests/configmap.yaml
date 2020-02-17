@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend
+data:
+  LOG_PATH: ""
+  BROKER_URL: "tcp://broker:3000"
+  PORT: "8080"
+  SUBSCRIBE_TOPIC: "mqtt-k8s-workshop"

@@ -1,0 +1,31 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: pub-cronjob
+spec:
+  schedule: "0 2 * * *"
+  failedJobsHistoryLimit: 2
+  successfulJobsHistoryLimit: 1
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    metadata:
+      labels:
+        cronjob: pub-cronjob
+        app: pub-cronjob
+    spec:
+      backoffLimit: 3
+      template:
+        metadata:
+          labels:
+            cronjob: pub-cronjob
+        spec:
+          containers:
+            - name: pub-cronjob
+              image: xxxxxxxxxxxxxxxxxxxxxxx/workshop/publisher-cronjob
+              command: ["/bin/sh"]
+              args: ["-c", "/publisher"]
+              envFrom:
+                - configMapRef:
+                    name: pub-cronjob
+          restartPolicy: Never
+

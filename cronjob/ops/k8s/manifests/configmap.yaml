@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pub-cronjob
+data:
+  AUTH: "workshop-auth"
+  BROKER_URL: "tcp://broker:3000"
+  PORT: "8080"
+  PUBLISHER_ID: "pub-cronjob"
+  PUBLISH_TOPIC: "mqtt-k8s-workshop"

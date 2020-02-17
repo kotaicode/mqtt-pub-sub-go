@@ -1,0 +1,22 @@
+FROM node:12.16-alpine as builder
+
+#add curl for healthcheck
+RUN apk update && apk add --no-cache curl
+
+ARG NODE_ENV=development
+ENV NODE_ENV ${NODE_ENV}
+
+ARG REACT_APP_BACKEND_URL=http://localhost:8080
+ENV REACT_APP_BACKEND_URL ${REACT_APP_BACKEND_URL}
+
+RUN mkdir -p /app
+WORKDIR /app
+
+COPY package.json yarn.lock ./
+RUN yarn install --frozen-lockfile
+
+COPY . .
+
+CMD ["yarn", "start"]
+
+EXPOSE 3000

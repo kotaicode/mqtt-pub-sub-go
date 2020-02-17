@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ping-listing:
+    build:
+      context: .
+      dockerfile: Dockerfile-dev
+      args:
+        REACT_APP_BACKEND_URL: http://localhost:8888
+    volumes:
+    - ./:/app
+    - /app/node_modules
+    ports:
+     - "3000:3000"

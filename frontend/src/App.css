@@ -1,0 +1,39 @@
+.container {
+  padding: 100px;
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(470px, 470px));
+  grid-gap: 75px;
+  grid-template-rows: auto auto auto;
+
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.msg-list-wrapper {
+  margin-top: 15px;
+  height: 422px;
+  min-width: 200px;
+  background: white;
+  padding: 0px 0px 15px 0px;
+  /*border-radius: 10px;*/
+}
+
+.msg-list {
+  color: black;
+  font-size: 0.6em;
+  text-align: left;
+  height: 379px;
+  /*overflow-x: auto;*/
+  /*overflow-y: auto;*/
+}
+
+.msg-list-item {
+  margin-top: 5px;
+}

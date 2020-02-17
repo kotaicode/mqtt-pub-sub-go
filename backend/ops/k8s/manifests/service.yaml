@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    annotations:
+    labels:
+        app: backend
+    name: backend
+spec:
+    ports:
+        - port: 3000
+          targetPort: backend-http
+    selector:
+        app: backend
+    sessionAffinity: None
+    type: ClusterIP

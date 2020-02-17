@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: pub-0
+data:
+  LOG_PATH: ""
+  BROKER_URL: "tcp://broker:3000"
+  PORT: "8080"
+  PUBLISHER_ID: "pub-0"
+  PUBLISH_TOPIC: "mqtt-k8s-workshop"
+  PUBLISH_INTERVAL: "3"

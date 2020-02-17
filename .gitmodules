@@ -1,0 +1,3 @@
+[submodule "broker/hmq"]
+	path = broker/hmq
+	url = git@github.com:fhmq/hmq.git
